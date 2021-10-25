@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       <h1>Search</h1>
       <form onSubmit={handleSearch}>
         <input
-          type='text'
+          type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

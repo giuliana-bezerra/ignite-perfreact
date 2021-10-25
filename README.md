@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  Perfreact
+</h1>
 
-## Getting Started
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-solução">Solução</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-licença">Licença</a>
+</p>
 
-First, run the development server:
+<p align="center">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=8257E5&labelColor=000000">
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+ <img src="https://img.shields.io/static/v1?label=Ignite&message=ReactJS&color=8257E5&labelColor=000000" alt="ReactJS" />
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## ✨ Tecnologias
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [ReactJS](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org)
+- [JSON Server](https://github.com/typicode/json-server)
 
-## Learn More
+## 💻 Projeto
 
-To learn more about Next.js, take a look at the following resources:
+O Perfreact é um aplicativo elaborado durante o Ignite de ReactJS para estudar performance de aplicações.
+## 💡 Solução
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Nessa aplicação foram explorados vários conceitos importantes como:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [x] Algoritmo de reconciliação do React
+- [x] Memo
+- [x] useMemo
+- [x] useCallback
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Além de tudo isso, eu adicionei algumas melhorias ao projeto inicialmente proposto durante o Ignite:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [x] Configuração do editorconfig e prettier do projeto.
+- [x] Criação do README 
+
+## 🚀 Como executar
+
+- Clone o repositório
+- Instale as dependências com `yarn`
+- Inicie o servidor da API com `yarn server`
+- Inicie a aplicação com `yarn dev`
+
+Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu navegador.
+
+## 📄 Licença
+
+Esse projeto está sob a licença MIT.
+
+---
