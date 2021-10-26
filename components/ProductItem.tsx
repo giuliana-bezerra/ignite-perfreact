@@ -9,7 +9,7 @@
 // 4. Componentes médios ou grandes performam melhor com o memo
 import { memo, useState } from 'react';
 import { AddProductToWishListProps } from './AddProductToWishlist';
-// import { AddProductToWishList } from './AddProductToWishlist';
+import lodash from 'lodash';
 
 // equivalente ao lazy do react, mas com a possibilidade de usar com SSR
 import dynamic from 'next/dynamic';
@@ -63,6 +63,6 @@ export const ProductItem = memo(
   ProductItemComponent,
   (prevProps, nextProps) => {
     // Deep compare
-    return Object.is(prevProps.product, nextProps.product);
+    return lodash.isEqual(prevProps.product, nextProps.product);
   }
 );

@@ -1,6 +1,5 @@
 import { ProductItem } from './ProductItem';
 import { List, AutoSizer, ListRowRenderer } from 'react-virtualized';
-import 'react-virtualized/styles.css'; // only needs to be imported once
 
 type SearchResultsProps = {
   totalPrice: number;
