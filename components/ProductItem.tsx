@@ -7,9 +7,24 @@
 // 2. Componentes que renderizam demais
 // 3. Rerender com as mesmas props
 // 4. Componentes médios ou grandes performam melhor com o memo
-import { memo } from 'react';
+import { memo, useState } from 'react';
+import { AddProductToWishListProps } from './AddProductToWishlist';
+// import { AddProductToWishList } from './AddProductToWishlist';
 
-interface ProductItemprops {
+// equivalente ao lazy do react, mas com a possibilidade de usar com SSR
+import dynamic from 'next/dynamic';
+
+// Dynamic Import:
+// Importar apenas quando o user for utilizar e assim otimizar o tamanho do bundle
+const AddProductToWishList = dynamic<AddProductToWishListProps>(
+  () =>
+    import('./AddProductToWishlist').then((mod) => mod.AddProductToWishList),
+  {
+    loading: () => <span>Carregando...</span>,
+  }
+);
+
+interface ProductItemProps {
   product: {
     id: number;
     price: number;
@@ -19,13 +34,27 @@ interface ProductItemprops {
   onAddToWishList: (id: number) => Promise<void>;
 }
 
-function ProductItemComponent({ product, onAddToWishList }: ProductItemprops) {
+function ProductItemComponent({ product, onAddToWishList }: ProductItemProps) {
+  const [isAddingToWishList, setIsAddingToWishList] = useState(false);
+
+  // Importar apenas quando o user for utilizar e assim otimizar o tamanho do bundle
+  // async function showFormattedDate() {
+  //   const {format} = await import('date-fns')
+  //   format()
+  // }
+
   return (
     <div>
       {product.title} - <strong>{product.priceFormatted}</strong>
-      <button onClick={() => onAddToWishList(product.id)}>
-        Add to whishlist
+      <button onClick={() => setIsAddingToWishList(true)}>
+        Adicionar aos favoritos
       </button>
+      {isAddingToWishList && (
+        <AddProductToWishList
+          onAddToWishList={() => onAddToWishList(product.id)}
+          onRequestClose={() => setIsAddingToWishList(false)}
+        />
+      )}
     </div>
   );
 }
