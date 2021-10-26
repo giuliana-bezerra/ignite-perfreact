@@ -32,13 +32,14 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 O Perfreact é um aplicativo elaborado durante o Ignite de ReactJS para estudar performance de aplicações.
 ## 💡 Solução
 
-Nessa aplicação foram explorados vários conceitos importantes como:
+Nessa aplicação foram explorados vários conceitos de performance importantes como:
 
 - [x] Algoritmo de reconciliação do React
 - [x] Memo
 - [x] useMemo
 - [x] useCallback
-
+- [x] Dynamic Import
+- [x] Virtualização
 
 Além de tudo isso, eu adicionei algumas melhorias ao projeto inicialmente proposto durante o Ignite:
 
