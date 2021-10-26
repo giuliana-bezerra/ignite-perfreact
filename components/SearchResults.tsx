@@ -8,9 +8,13 @@ type SearchResultsProps = {
     price: number;
     title: string;
   }>;
+  onAddToWishList: (id: number) => Promise<void>;
 };
 
-export function SearchResults({ results }: SearchResultsProps) {
+export function SearchResults({
+  results,
+  onAddToWishList,
+}: SearchResultsProps) {
   // useMemo:
   // 1. Não recalcular algo pesado sem necessidade
   // 2. Igualdade referencial (quando a gente repassa a informação para um componente filho e por isso ele sempre é rerenderizado)
@@ -26,7 +30,11 @@ export function SearchResults({ results }: SearchResultsProps) {
     <div>
       <h2>{totalPrice}</h2>
       {results.map((product) => (
-        <ProductItem product={product} />
+        <ProductItem
+          key={product.id}
+          product={product}
+          onAddToWishList={onAddToWishList}
+        />
       ))}
     </div>
   );

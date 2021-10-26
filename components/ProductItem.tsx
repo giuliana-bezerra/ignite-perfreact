@@ -15,12 +15,16 @@ interface ProductItemprops {
     price: number;
     title: string;
   };
+  onAddToWishList: (id: number) => Promise<void>;
 }
 
-function ProductItemComponent({ product }: ProductItemprops) {
+function ProductItemComponent({ product, onAddToWishList }: ProductItemprops) {
   return (
     <div>
       {product.title} - <strong>{product.price}</strong>
+      <button onClick={() => onAddToWishList(product.id)}>
+        Add to whishlist
+      </button>
     </div>
   );
 }

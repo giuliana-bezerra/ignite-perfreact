@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useCallback, useState } from 'react';
 import { SearchResults } from '../components/SearchResults';
 
 const Home: NextPage = () => {
@@ -17,6 +17,12 @@ const Home: NextPage = () => {
     setResults(data);
   }
 
+  // Usar o useCallback para quando passar uma função para vários componentes filhos
+  // A igualdade referencial vai fazer com que os componentes rerenderizem pq a função passada como props sempre será recriada
+  const addToWishList = useCallback(async (id: number) => {
+    console.log(id);
+  }, []);
+
   return (
     <div>
       <h1>Search</h1>
@@ -27,7 +33,7 @@ const Home: NextPage = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </form>
-      <SearchResults results={results} />
+      <SearchResults results={results} onAddToWishList={addToWishList} />
     </div>
   );
 };
